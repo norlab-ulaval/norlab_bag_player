@@ -1,5 +1,6 @@
 <launch>
 	<arg name="rate" default="1"/>
+	<arg name="start" default="0"/>
 
 	<param name="/use_sim_time" value="true"/>
 
@@ -18,6 +19,6 @@
 		<param name="intensity_mode" value="1"/>
 	</node>
 
-	<node pkg="rosbag" type="play" name="play" output="screen" args="-r $(arg rate) --clock $(arg bagfile)"/>
+	<node pkg="rosbag" type="play" name="play" output="screen" args="-r $(arg rate) --clock $(arg bagfile) -s $(arg start)"/>
 </launch>
 
