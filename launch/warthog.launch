@@ -19,6 +19,8 @@
 		<param name="intensity_mode" value="1"/>
 	</node>
 
-	<node pkg="rosbag" type="play" name="play" output="screen" args="-r $(arg rate) --clock $(arg bagfile) -s $(arg start)"/>
+	<include file="$(find warthog_description)/launch/description.launch"/>
+
+	<node pkg="rosbag" type="play" name="play" output="screen" args="-r $(arg rate) --clock $(arg bagfile) -s $(arg start) -d 2"/>
 </launch>
 
