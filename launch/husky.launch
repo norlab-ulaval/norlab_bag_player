@@ -1,0 +1,9 @@
+<launch>
+	<arg name="rate" default="1"/>
+	<arg name="start" default="0"/>
+
+	<param name="/use_sim_time" value="true"/>
+
+	<node pkg="rosbag" type="play" name="play" output="screen" args="-r $(arg rate) --clock $(arg bagfile) -s $(arg start) -d 2 --pause"/>
+</launch>
+
