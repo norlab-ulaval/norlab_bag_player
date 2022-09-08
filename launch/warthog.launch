@@ -19,6 +19,11 @@
 		<param name="intensity_mode" value="1"/>
 	</node>
 
+	<node name="pcl_deskew_node" pkg="pointcloud_motion_deskew" type="pointcloud2_deskew_node" >
+		<remap from="input_point_cloud" to="rslidar32_points" />
+		<remap from="output_point_cloud" to="rslidar32_points_deskewed" />
+	</node>
+
 	<include file="$(find warthog_description)/launch/description.launch"/>
 
 	<node pkg="rosbag" type="play" name="play" output="screen" args="-r $(arg rate) --clock $(arg bagfile) -s $(arg start) -d 2"/>
